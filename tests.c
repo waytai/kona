@@ -189,6 +189,8 @@ Z I tests02()
   TC( 3, {:[x<2;1;_f[x-1]*x]}/: 2 3 4; {b:3; g:{b}; b:4; g[]}0) // muti-statement combo test
   TC(120, {b:3; g:{b}; a::{:[x<2; 1; _f[x-1]*x]}5; g[ ]}0; a) // embedded _f with atom-arg
   TC(2 6 24, {b:3; g:{b}; a::{:[x<2; 1; _f[x-1]*x]}/:2 3 4; g[ ]}0; a) // embedded _f with list-arg
+  TC( 5, {x + {[a] a+a} y}[1;2])   // Leon Baum test
+  TC( 5, {[a;b] a + {x+x} b}[1;2]) // Leon Baum test-2
 
   //Error trap: {[a;b][c;d] a+b} -> parse error ; { {[a][b] }} -> parse error
   TC(.[*; (3;4); :], (0;12) )
